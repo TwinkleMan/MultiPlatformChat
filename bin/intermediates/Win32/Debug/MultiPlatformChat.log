@@ -1,0 +1,4 @@
+﻿D:\Program Files(x86)\VisualStudio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(499,5): warning MSB8004: каталог Intermediate заканчивается не косой чертой.  Этот экземпляр сборки добавит косую черту, поскольку она необходима для правильного определения каталога Intermediate.
+D:\Program Files(x86)\VisualStudio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(500,5): warning MSB8004: каталог Output заканчивается не косой чертой.  Этот экземпляр сборки добавит косую черту, поскольку она необходима для правильного определения каталога Output.
+  main.cpp
+  MultiPlatformChat.vcxproj -> D:\CDev\MultiPlatformChat\bin\Win32\Debug\MultiPlatformChat.exe
