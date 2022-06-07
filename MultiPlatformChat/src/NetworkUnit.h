@@ -20,6 +20,8 @@ static WSAData wsaData;
 #include <unistd.h>
 #endif
 
+#define MESSAGE_SIZE 256
+
 namespace Engine
 {
 	enum class STATE
@@ -75,7 +77,7 @@ namespace Engine
 		struct sockaddr_in m_socketInfo;
 		int m_port = 5000;
 		int m_addressLen = 0;
-		int m_messageSize = 4096;
+		int m_messageSize = 256;
 		STATE m_state;
 
 	protected:

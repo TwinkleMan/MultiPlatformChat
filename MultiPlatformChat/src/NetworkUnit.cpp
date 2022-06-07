@@ -1,5 +1,8 @@
 #include "NetworkUnit.h"
 
+#include <iostream>
+#include <ostream>
+
 namespace Engine
 {
 	void NetworkUnit::setSocketInfo()
@@ -59,9 +62,9 @@ namespace Engine
 		m_state = state;
 	}
 
-	void NetworkUnit::setMessageSize(const int& messageSize) {
+	/*void NetworkUnit::setMessageSize(const int& messageSize) {
 		m_messageSize = messageSize;
-	}
+	}*/
 
 	WORKMODE NetworkUnit::getWorkmode() const
 	{
@@ -79,12 +82,18 @@ namespace Engine
 
 		 #ifdef _WIN32
 		 if (WSAStartup(MAKEWORD(2, 0), &wsaData) != 0) {
+			 std::cout << "WSAStartup() failed" << std::endl;
+			 std::getchar();
+			 std::getchar();
 			 throw std::runtime_error("WSAStartup() failed");
 		 }
 		 #endif
 
 		 this->m_socketFd = socket(AF_INET, SOCK_STREAM, 0);
 		 if (this->m_socketFd == -1) {
+			 std::cout << "could not create socket" << std::endl;
+			 std::getchar();
+			 std::getchar();
 			 throw std::runtime_error("could not create socket");
 		 }
 		 this->m_state = STATE::OPEN;
@@ -100,11 +109,17 @@ namespace Engine
 		 }
 		 #ifdef _WIN32
 		 if (::closesocket(this->m_socketFd) < 0) {
+			 std::cout << "could not create socket" << std::endl;
+			 std::getchar();
+			 std::getchar();
 			 throw std::runtime_error("Could not close socket");
 		 }
 		 ::WSACleanup();
 		 #else
 		 if (close(this->m_socketFd) < 0) {
+			 std::cout << "could not create socket" << std::endl;
+			 std::getchar();
+			 std::getchar();
 			 throw std::runtime_error("Could not close socket");
 		 }
 		 #endif
